@@ -1,0 +1,6 @@
+{
+  "name": "video-chatbot-json2video",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-07",
+  "workers_dev": true
+}

@@ -1,16 +1,11 @@
-# 🎬 VideoGen Chat — JSON2Video
+# VideoGen Chat — JSON2Video + Cloudflare Workers
 
-A local chatbot interface for creating videos with JSON2Video.
+A simple browser chatbot that turns a text prompt into a rendered video through JSON2Video.
 
-## Setup
+## Deployment
 
-1. Install Node.js 20+.
-2. Copy `.env.example` to `.env`.
-3. Put your JSON2Video API key into `.env` as `JSON2VIDEO_API_KEY=...`.
-4. Run `npm install`.
-5. Run `npm start`.
-6. Open http://localhost:3000
+This project is designed to run on Cloudflare Workers. The JSON2Video API key must be stored as a Cloudflare Worker secret named `JSON2VIDEO_API_KEY` and must never be committed to GitHub.
 
-**Never commit `.env` or your API key to GitHub.**
+The Worker serves the chat UI and provides `/api/generate` and `/api/status` endpoints.
 
-The server keeps the API key private and calls JSON2Video from the backend. It submits a Movie JSON, polls the asynchronous render, and returns the finished video URL to the browser.
+Cloudflare can also connect this repository to Workers Builds so pushes to `main` automatically deploy updates.
